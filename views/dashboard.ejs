@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>All Insurance Records</h1>
+    <a href="/records/new">Add New Record</a>
+    <ul>
+        <% records.forEach(record => { %>
+            <li>
+                <%= record.policyHolder %> - <%= record.policyNumber %> - $<%= record.premiumAmount %>
+                <a href="/records/<%= record._id %>/edit">Edit</a>
+                <form action="/records/<%= record._id %>?_method=DELETE" method="POST">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
+</body>
+</html>

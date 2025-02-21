@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Add Record</title>
+</head>
+<body>
+    <h1>Add New Record</h1>
+    <form action="/records" method="POST">
+        <input type="text" name="policyHolder" placeholder="Policy Holder Name" required>
+        <input type="text" name="policyNumber" placeholder="Policy Number" required>
+        <input type="number" name="premiumAmount" placeholder="Premium Amount" required>
+        <input type="date" name="startDate" required>
+        <input type="date" name="endDate" required>
+        <button type="submit">Add Record</button>
+    </form>
+</body>
+</html>
