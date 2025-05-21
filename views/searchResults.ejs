@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            padding: 40px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .result-list {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .hospital {
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+        }
+        .hospital:last-child {
+            border-bottom: none;
+        }
+        .back-btn {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Search Results for "<%= query %>"</h1>
+<div class="result-list">
+  <% if (hospitals.length > 0) { %>
+    <% hospitals.forEach(h => { %>
+      <div class="hospital" style="padding: 20px; border-bottom: 1px solid #ccc;">
+        <h2><%= h.name %></h2>
+        <img src="<%= h.image %>" alt="Hospital image" style="width:100%; max-width:400px;"><br>
+        <p><strong>Address:</strong> <%= h.address %></p>
+        <p><strong>Contact:</strong> <%= h.contact %></p>
+        <p><%= h.description %></p>
+      </div>
+    <% }) %>
+  <% } else { %>
+    <p style="text-align:center;">No hospitals found.</p>
+  <% } %>
+</div>
+
+</body>
+</html>
+           
